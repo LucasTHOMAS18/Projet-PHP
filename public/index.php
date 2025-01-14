@@ -19,6 +19,24 @@ switch ($action) {
     case 'results':
         QuizController::showResults();
         break;
+    case 'import':
+        QuizController::importQuiz();
+        break;
+    case 'export':
+        QuizController::exportQuiz();
+        break;
+    case 'login':
+        QuizController::login();
+        break;
+    case 'register':
+        QuizController::register();
+        break;
+    case 'list':
+        QuizController::listQuizzes();
+        break;
+    case 'create':
+        QuizController::createQuiz();
+        break;
     default:
         echo "Action non reconnue.";
         break;

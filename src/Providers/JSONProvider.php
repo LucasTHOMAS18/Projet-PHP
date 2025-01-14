@@ -7,6 +7,13 @@ class JSONProvider {
         if (!file_exists($filepath)) {
             throw new \Exception("Le fichier $filepath est introuvable.");
         }
-        return json_decode(file_get_contents($filepath), true);
+        
+        $data = json_decode(file_get_contents($filepath), true);
+        if (empty($data)) {
+            throw new \Exception(sprintf('Pas de données dans le fichier "%s"'));
+        }
+        else {
+            return $data;
+        }
     }
 }
